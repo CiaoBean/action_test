@@ -23,7 +23,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: ping
-      run:  ping www.baidu.com
+      run:  ping 163.177.151.109
     - name: free
       run:  free -h 
     - name: cpu
