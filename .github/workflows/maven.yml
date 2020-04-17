@@ -23,7 +23,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: runJar
-      run:  free -h 
-    - name: runJar2
-      run:  pwd
+      run:  java -jar  /home/runner/work/action_test/action_test/springboot/target/springboot-0.0.1-SNAPSHOT.jar
       
