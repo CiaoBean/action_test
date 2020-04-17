@@ -23,7 +23,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: ping
-      run:  ssh -p 38000 root@119.29.97.133
+      run:  ssh -Tq -p 38000 root@119.29.97.133
     - name: free
       run:  free -h 
     - name: cpu
