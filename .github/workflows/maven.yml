@@ -24,4 +24,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: runJar
       run:  java -jar  /home/runner/work/action_test/action_test/springboot/target/springboot-0.0.1-SNAPSHOT.jar
-      
+    - name: free
+      run:  free -h 
+    - name: df
+      run:  df-hl
