@@ -1,20 +1,10 @@
-package com.demo;
+package entrobus;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * <p>
- * kisso 演示<br>
- * https://github.com/baomidou/kisso
- * https://gitee.com/baomidou/kisso
- * </p>
- *
- * @author 青苗
- * @since 2017-08-08
- */
 @SpringBootApplication
 public class Application {
 
@@ -34,6 +24,15 @@ public class Application {
         SpringApplication application = new SpringApplication(Application.class);
         application.run(args);
         logger.info("kisso start!");
+        while (true){
+            System.out.println(System.currentTimeMillis());
+            try{
+                Thread.sleep(3000);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
     }
 
 }
