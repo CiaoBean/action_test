@@ -24,8 +24,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: free
       run:  free -h 
-    - name: df
-      run:  df-hl
     - name: cpu
       run:  cat /proc/cpuinfo
     - name: runJar
