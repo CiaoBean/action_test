@@ -15,11 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
       with:
-        java-version: 1.8
-    - name: SSH Commands
-      uses: appleboy/ssh-action@v0.0.2
+        host: 122.51.85.74
+        username: root
+        password: '#sky132@'
+        port: 22
+        script: whoami
 
