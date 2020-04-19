@@ -23,6 +23,34 @@ jobs:
         password: '#sky132@'
         port: 22
         script: |
-          cd /usr/local/caoxc
-          ./gitstart.sh
+          export JAVA_HOME=/usr/local/jdk1.8.0_201
+          echo "javabin"
+          export JAVA_BIN=$JAVA_HOM/bin
+          echo "javalib"
+          export JAVA_LIB=$JAVA_HOME/lib
+          echo "classpath"
+          export CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
+          echo "path"
+          export PATH=$JAVA_BIN:$PATH
+          echo "git"
+          export PATH=$PATH:/usr/local/git/bin
+          echo "maven"
+          export M2_HOME=/usr/local/caoxc/apache-maven-3.3.9/
+          #export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin
+          echo "path"
+          export PATH=${M2_HOME}/bin:${PATH}
+          date=`date +%Y%m%d%H%M%S`
+          RUN_PATH=/usr/local/caoxc/
+          CODE_PATH=/usr/local/caoxc/code/
+          APP_NAME=springboot.jar
+          JAR_PATH=/usr/local/caoxc/code/action_test/springboot/target/
+          rm -rf /usr/local/caoxc/code/action_test
+          cd ${CODE_PATH}
+          git clone  https://github.com/CiaoBean/action_test.git
+          cd ${CODE_PATH}/action_test
+          mvn clean install -Dmaven.test.skip=true
+          cd ${JAR_PATH}
+          # ps -ef | grep springboot | awk '{ print $2 }' | sudo xargs kill -9
+          echo "杩愯jar"
+          java -jar springboot-0.0.1-SNAPSHOT.jar
 
