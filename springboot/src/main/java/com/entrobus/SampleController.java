@@ -1,5 +1,4 @@
-package entrobus;
-
+package com.entrobus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +18,7 @@ public class SampleController {
     @ResponseBody
     @RequestMapping("/")
     public String home() {
-        return "Hello Kisso!";
+        return "Hello entrbous!";
     }
 
 }

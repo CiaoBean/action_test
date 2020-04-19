@@ -24,15 +24,15 @@ public class Application {
         SpringApplication application = new SpringApplication(Application.class);
         application.run(args);
         logger.info("kisso start!");
-        while (true){
-            System.out.println(System.currentTimeMillis());
-            try{
-                Thread.sleep(3000);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-        }
+//        while (true){
+//            System.out.println(System.currentTimeMillis());
+//            try{
+//                Thread.sleep(3000);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//
+//        }
     }
 
 }
