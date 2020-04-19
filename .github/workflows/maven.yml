@@ -22,5 +22,6 @@ jobs:
         username: root
         password: '#sky132@'
         port: 22
-        script: source /usr/local/caoxc/gitstart.sh 
+        script: cd source /usr/local/caoxc
+                ./gitstart.sh 
 
