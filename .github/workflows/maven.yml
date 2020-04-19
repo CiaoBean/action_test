@@ -22,5 +22,5 @@ jobs:
         username: root
         password: '#sky132@'
         port: 22
-        script: echo 111
+        run: echo 111
 
