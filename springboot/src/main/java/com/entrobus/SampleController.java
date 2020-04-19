@@ -18,7 +18,7 @@ public class SampleController {
     @ResponseBody
     @RequestMapping("/test")
     public String home() {
-        return "Hello entrbous!";
+        return "Hello entrbous !";
     }
 
 }
