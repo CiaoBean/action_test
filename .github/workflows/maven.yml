@@ -23,6 +23,7 @@ jobs:
         password: '#sky132@'
         port: 22
         script: |
+          # !/bin/bash
           source /etc/profile
           export JAVA_HOME=/usr/local/jdk1.8.0_201
           echo "javabin"
