@@ -28,7 +28,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.5.3.RELEASE</version>
                 <configuration>
-                    <mainClass>entrobus.Application</mainClass>
+                    <mainClass>com.entrobus.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -1,4 +1,4 @@
-package entrobus;
+package com.entrobus;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,6 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(Application.class);
         application.run(args);
-        logger.info("kisso start!");
 //        while (true){
 //            System.out.println(System.currentTimeMillis());
 //            try{
