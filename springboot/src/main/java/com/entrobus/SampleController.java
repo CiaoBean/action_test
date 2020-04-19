@@ -16,7 +16,7 @@ public class SampleController {
 
 
     @ResponseBody
-    @RequestMapping("/")
+    @RequestMapping("/test")
     public String home() {
         return "Hello entrbous!";
     }
