@@ -11,8 +11,8 @@ on:
 
 jobs:
   job_id: 
-    name:  11asdfdsad
-    runs-on: [linux]
+    name: 11asdfdsad
+    runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
