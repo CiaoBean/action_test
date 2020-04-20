@@ -28,6 +28,7 @@ jobs:
       - name: Build with Maven 
         run: mvn -B package --file pom.xml
   deploy_job: 
+    needs: [maven_job]
     name: deploy_job
     runs-on: [ubuntu-latest]
     steps:
