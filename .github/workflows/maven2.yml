@@ -16,7 +16,7 @@ jobs:
      steps: 
        - name: test
          run: echo hello
-  test_deploy:
+  test:
     name: 11asdfdsad
     runs-on: [ubuntu-latest]
     steps:
@@ -27,3 +27,15 @@ jobs:
               java-version: 1.8
       - name: Build with Maven 
         run: mvn -B package --file pom.xml
+  deploy: 
+    name: afn11
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: executing remote ssh commands using password
+      - uses: appleboy/ssh-action@master
+        with:
+            host: 122.51.85.74
+            username: root
+            password: '#sky132@'
+            port: 22
+            script: source /usr/local/caoxc/gitstart.sh
