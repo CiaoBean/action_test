@@ -10,14 +10,14 @@ on:
     branches: [ master ]
 
 jobs:
-  job_id:
-     name: 322asfd
+  job_id_test:
+     name: job_id_test
      runs-on: [ubuntu-latest]
      steps: 
        - name: test
          run: echo hello
-  test:
-    name: 11asdfdsad
+  maven_job:
+    name: maven_job
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
@@ -27,3 +27,15 @@ jobs:
               java-version: 1.8
       - name: Build with Maven 
         run: mvn -B package --file pom.xml
+  deploy_job: 
+    name: deploy_job
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: executing remote ssh commands using password
+      - uses: appleboy/ssh-action@master
+        with:
+            host: 122.51.85.74
+            username: root
+            password: '#sky132@'
+            port: 22
+            script: source /usr/local/caoxc/gitstart.sh
