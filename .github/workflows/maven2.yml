@@ -20,7 +20,7 @@ jobs:
      runs-on: [ubuntu-latest]
      steps: 
        - name: cpu_info
-         run: cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+         run:  cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
        - name: free_info
          run: free -h
        - name: df_info
