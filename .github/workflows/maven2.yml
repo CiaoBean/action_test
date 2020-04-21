@@ -28,56 +28,28 @@ jobs:
       - name: Build with Maven 
         run: mvn -B package --file pom.xml
   deploy_job: 
-    ## needs: [maven_job]
+    needs: [maven_job]
     name: deploy_job
     runs-on: [ubuntu-latest]
     steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2.2.0
         with:
-            host: 122.51.85.74
-            username: root
-            password: '#sky132@'
-            port: 22
-            script: | 
-                # !/bin/bash
-                source /etc/profile
-                export JAVA_HOME=/usr/local/jdk1.8.0_201
-                echo "javabin"
-                export JAVA_BIN=$JAVA_HOM/bin
-                echo "javalib"
-                export JAVA_LIB=$JAVA_HOME/lib
-                echo "classpath"
-                export CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
-                echo "path"
-                export PATH=$JAVA_BIN:$PATH
-                echo "git"
-                export PATH=$PATH:/usr/local/git/bin
-                echo "maven"
-                export M2_HOME=/usr/local/caoxc/apache-maven-3.3.9/
-                #export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin
-                echo "path"
-                export PATH=${M2_HOME}/bin:${PATH}
-                date=`date +%Y%m%d%H%M%S`
-                RUN_PATH=/usr/local/caoxc/
-                CODE_PATH=/usr/local/caoxc/code/
-                APP_NAME=springboot.jar
-                JAR_PATH=/usr/local/caoxc/code/action_test/springboot/target/
-                rm -rf /usr/local/caoxc/code/action_test
-                cd ${CODE_PATH}
-                git clone  https://github.com/CiaoBean/action_test.git
-                cd ${CODE_PATH}/action_test
-                mvn clean install -Dmaven.test.skip=true
-                cd ${JAR_PATH}
-                PID=$(ps -ef | grep springboot-0.0.1-SNAPSHOT.jar | grep -v grep | awk '{ print $2 }')
-                if [ -z "$PID" ]
-                then
-                  echo Application is already stopped
-                else
-                  echo kill $PID
-                  kill -9 $PID
-                fi
-                echo "运行jar"
-                nohup java -jar springboot-0.0.1-SNAPSHOT.jar  >/usr/local/caoxc/temp.txt &
-                echo "后台启动jar完成"
-                exit
+          # SMTP server address
+          server_address: smtp.exmail.qq.com
+          # SMTP server port
+          server_port: 465
+          # Authenticate as this user to SMTP server
+          username: caoxc@entrobus.com
+          # Authenticate with this password to SMTP server
+          password: Cxc19940305
+          # Subject of mail message
+          subject: finish deploy
+          # Body of mail message (might be a filename prefixed with file:// to read from)
+          body: finish deploy successfully
+          # Recipients mail addresses (separated with comma)
+          to: 190207920@qq.com
+          # Full name of mail sender (might be with an email address specified in <>)
+          from: caoxc@entrobus.com
+          # Content-Type HTTP header (text/html or text/plain)
+          content_type: finish deploy successfully
