@@ -15,13 +15,13 @@ on:
 
 
 jobs:
-  job_id_test:
+  job_info:
      name: job_id_test
      runs-on: [ubuntu-latest]
      steps: 
        - name: cpu_info
          run: cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
        - name: free_info
-         run: echo free -h
+         run: free -h
        - name: df_info
-         run: echo df -h
+         run: df -h
