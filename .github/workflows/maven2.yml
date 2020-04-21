@@ -37,4 +37,4 @@ jobs:
           password: '#sky132@'
           port: 22
           source: "/home/runner/work/action_test/action_test/springboot/target/springboot-0.0.1-SNAPSHOT.jar"
-          target: "/usr/local/caoxc/"
+          target: "/usr/local/caoxc/springboot-0.0.1-SNAPSHOT.jar"
