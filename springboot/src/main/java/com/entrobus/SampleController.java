@@ -11,7 +11,7 @@ public class SampleController {
 
     @RequestMapping("/home")
     public String home() {
-        return "Hello entrbous888 !";
+        return "Hello entrbousdddddddd !";
     }
 
 }
