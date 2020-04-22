@@ -27,7 +27,7 @@ jobs:
         with:
             host: 122.51.85.74
             username: root
-            password: '#aaasky132@'
+            password: '#sky132@'
             port: 22
             script: | 
                 # !/bin/bash
